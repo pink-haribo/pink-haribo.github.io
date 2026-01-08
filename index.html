@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,21 @@
     <style>
         @font-face {
             font-family: 'MaruBuri';
-            src: url('fonts/maruburi/maruburi regular.ttf') format('truetype');
+            src: url('fonts/maruburi/TTF/MaruBuri-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SavoyeLET';
+            src: url('fonts/SavoyeLET.ttc') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SnellRoundhand';
+            src: url('fonts/SnellRoundhand.ttc') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
@@ -173,38 +188,43 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.75);
             display: flex;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            animation: fadeOut 2s ease-in-out 5s forwards;
+            animation: fadeOut 2.5s ease-in-out 4s forwards;
         }
 
         .intro-text {
-            font-family: 'MaruBuri', serif;
-            font-size: 40px;
+            font-family: 'SnellRoundhand', serif;
+            font-size: 50px;
             color: #f9caca;
             font-weight: 500;
             overflow: hidden;
             border-right: 3px solid #f9caca;
             white-space: nowrap;
-            animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite 3s;
+            width: 22ch;
+            animation: typing 2.5s steps(20, end) forwards, blink 0.75s step-end infinite 3s;
         }
 
         @keyframes typing {
             from {
                 width: 0;
             }
+
             to {
-                width: 100%;
+                width: 17ch;
             }
         }
 
         @keyframes blink {
-            from, to {
+
+            from,
+            to {
                 border-color: transparent;
             }
+
             50% {
                 border-color: #f9caca;
             }
@@ -214,6 +234,7 @@
             0% {
                 opacity: 1;
             }
+
             100% {
                 opacity: 0;
                 pointer-events: none;
@@ -301,164 +322,112 @@
         }
     </style>
 </head>
+
 <body>
     <!-- 시작 오버레이 -->
     <div class="intro-overlay" id="intro-overlay">
-        <div class="intro-text">We're getting married</div>
+        <div class="intro-text">We're getting married!</div>
     </div>
-
     <div class="container">
         <!-- 대문 사진 -->
-        <div class="main-image">
-            <img src="images/main-image.jpg" alt="Wedding Photo">
-        </div>
-
-        <!-- 여백 -->
-        <div class="spacer"></div>
-
-        <!-- 메인 정보 -->
+        <div class="main-image"> <img src="images/main-image.jpg" alt="Wedding Photo"> </div> <!-- 여백 -->
+        <div class="spacer"></div> <!-- 메인 정보 -->
         <div class="main-info">
-            <div class="couple-names">
-                선재 <span class="heart">♥</span> 하연
-            </div>
-            <div class="wedding-date">
-                26년 5월 31일 오후 12:30
-            </div>
-            <div class="wedding-location">
-                메종드아나하
-            </div>
-        </div>
-
-        <!-- 여백 -->
-        <div class="spacer"></div>
-
-        <!-- 연락처 섹션 -->
+            <div class="couple-names"> 선재 <span class="heart">♥</span> 하연 </div>
+            <div class="wedding-date"> 26년 5월 31일 오후 12:30 </div>
+            <div class="wedding-location"> 메종드아나하 </div>
+        </div> <!-- 여백 -->
+        <div class="spacer"></div> <!-- 연락처 섹션 -->
         <div class="contact-section">
             <div class="contact-grid">
                 <!-- 신랑측 -->
                 <div class="contact-side">
                     <div class="side-label">신랑</div>
-
                     <div class="person-info">
                         <div class="person-name">선재</div>
-                        <div class="contact-icons">
-                            <a href="tel:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
-
                     <div class="person-info">
                         <div class="person-title">아버지</div>
                         <div class="person-name">홍길동</div>
-                        <div class="contact-icons">
-                            <a href="tel:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
-
                     <div class="person-info">
                         <div class="person-title">어머니</div>
                         <div class="person-name">홍길동</div>
-                        <div class="contact-icons">
-                            <a href="tel:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01012345678" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01012345678" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
-                </div>
-
-                <!-- 구분선 -->
-                <div class="divider"></div>
-
-                <!-- 신부측 -->
+                </div> <!-- 구분선 -->
+                <div class="divider"></div> <!-- 신부측 -->
                 <div class="contact-side">
                     <div class="side-label">신부</div>
-
                     <div class="person-info">
                         <div class="person-name">하연</div>
-                        <div class="contact-icons">
-                            <a href="tel:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
-
                     <div class="person-info">
                         <div class="person-title">아버지</div>
                         <div class="person-name">홍길동</div>
-                        <div class="contact-icons">
-                            <a href="tel:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
-
                     <div class="person-info">
                         <div class="person-title">어머니</div>
                         <div class="person-name">홍길동</div>
-                        <div class="contact-icons">
-                            <a href="tel:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </a>
-                            <a href="sms:01087654321" class="icon-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <div class="contact-icons"> <a href="tel:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg> </a> <a href="sms:01087654321" class="icon-btn"> <svg viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                                </svg>
-                            </a>
-                        </div>
+                                </svg> </a> </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        // 7초 후 오버레이 완전히 제거
-        setTimeout(function() {
-            var overlay = document.getElementById('intro-overlay');
-            if (overlay) {
-                overlay.remove();
-            }
-        }, 7000);
-    </script>
+    <script> // 7초 후 오버레이 완전히 제거 setTimeout(function () { var overlay = document.getElementById('intro-overlay'); if (overlay) { overlay.remove(); } }, 7000); </script>
 </body>
+
 </html>
