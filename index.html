@@ -181,7 +181,7 @@
             overflow: hidden;
             border-right: 3px solid #f9caca;
             white-space: nowrap;
-            animation: typing 3s steps(20, end), blink 0.75s step-end 3s;
+            animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite 3s;
         }
 
         @keyframes typing {
@@ -200,11 +200,6 @@
             50% {
                 border-color: #f9caca;
             }
-        }
-
-        .intro-text.finished {
-            border-right-color: transparent;
-            animation: none;
         }
 
         @keyframes fadeOut {
@@ -451,14 +446,6 @@
     </div>
 
     <script>
-        // 3초 후 커서 깜빡임 멈추기
-        setTimeout(function() {
-            var introText = document.querySelector('.intro-text');
-            if (introText) {
-                introText.classList.add('finished');
-            }
-        }, 3000);
-
         // 7초 후 오버레이 완전히 제거
         setTimeout(function() {
             var overlay = document.getElementById('intro-overlay');
